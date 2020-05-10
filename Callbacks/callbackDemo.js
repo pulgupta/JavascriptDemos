@@ -2,7 +2,12 @@ const posts = [
   { title: "Post one", body: "This is post one" },
   { title: "Post two", body: "This is post two" },
 ];
-
+/**
+ * Important: Do not just assume that callbacks are always async
+ * ForEach also takes a callback but is always synchronous.
+ * Hence we cannot say that if something is using callback that it will necessary be 
+ * a async function
+ */
 function getPosts() {
   let output = "";
   setTimeout(() => {
