@@ -32,13 +32,11 @@ function savePost(post) {
   });
 }
 
-savePost({ title: "Post three", body: "This is post three" })
-  .then((data) => {
-    // Using the data which we returned from the promise
-    console.log(data.text); 
-    getPosts();
-  })
-  .catch((errorData) => {
-    // Another method refernce to handle the error
-    console.log("Some error occoured", errorData); 
-  });
+async function init() {
+  // SavePost still returns a Promise but rahther than 
+  // using .then() we have made this call a blocking call
+  await savePost({ title: "Post three", body: "This is post three" }); 
+  getPosts();
+}
+
+init();

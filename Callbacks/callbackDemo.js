@@ -8,7 +8,8 @@ function getPosts() {
   setTimeout(() => {
     // This is also a callback
     posts.forEach((post) => {
-      output += `<li>${post.title}</li>`; // Backtick format for template notation
+      // Backtick format for template notation
+      output += `<li>${post.title}</li>`; 
     });
     document.body.innerHTML = output;
   }, 1); // Miliseconds
