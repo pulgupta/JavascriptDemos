@@ -23,8 +23,13 @@ function getPosts() {
 function savePost(post, callback) {
   setTimeout(() => {
     posts.push(post);
-    callback();
+    // One way to return back the data is to pass that data back into the
+    // callback function. In this case we can use that data in our caller.
+    callback(posts[2]);
   }, 2000);
 }
 
-savePost({ title: "Post three", body: "This is post three" }, getPosts);
+savePost({ title: "Post three", body: "This is post three" }, (postsReturned) => {
+  console.log(postsReturned);
+  getPosts();
+});
