@@ -23,8 +23,10 @@ function getPosts() {
 function savePost(post, callback) {
   setTimeout(() => {
     posts.push(post);
-    // One way to return back the data is to pass that data back into the
-    // callback function. In this case we can use that data in our caller.
+    /**
+     * One way to return back the data is to pass that data back into the
+     * callback function. In this case we can use that data in our caller.
+     */
     callback(posts[2]);
   }, 2000);
 }

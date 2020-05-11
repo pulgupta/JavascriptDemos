@@ -6,9 +6,11 @@ const posts = [
 function getPosts() {
   let output = "";
   setTimeout(() => {
-    // This is nothing but the callback which timeout takes.
-    // Callback is nothing but a method parameter which is actually a function which the accepting
-    // method executed.
+    /**
+     * This is nothing but the callback which timeout takes.
+     * Callback is nothing but a method parameter which is actually a function which the accepting
+     * method executed.
+     */
     posts.forEach((post) => {
       // Backtick format for template notation
       output += `<li>${post.title}</li>`; 
@@ -33,8 +35,10 @@ function savePost(post) {
 }
 
 async function init() {
-  // SavePost still returns a Promise but rahther than 
-  // using .then() we have made this call a blocking call
+  /**
+   * SavePost still returns a Promise but rahther than 
+   * using .then() we have made this call a blocking call
+   */
   await savePost({ title: "Post three", body: "This is post three" }); 
   getPosts();
 }
