@@ -66,3 +66,8 @@ savePost({ title: "Post three", body: "This is post three" })
     // Another method refernce to handle the error
     console.log("Some error occoured", errorData); 
   });
+
+  /**
+   * In case our promise are mutually exclusive then we can listen for all of
+   * them in a single call using promise.all().then
+   */
