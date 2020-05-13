@@ -30,7 +30,7 @@ function savePost(post) {
       } else {
         reject("Error details of save");
       }
-    }, 1000);
+    }, 6000);
   });
 }
 
@@ -71,3 +71,18 @@ savePost({ title: "Post three", body: "This is post three" })
    * In case our promise are mutually exclusive then we can listen for all of
    * them in a single call using promise.all().then
    */
+
+
+
+/**
+ * In this case we can see that the value is returned immediately
+ */   
+async function demo() {
+  await savePost({ title: "Post four", body: "This is post four" });
+  console.log('[demo] has returned');
+
+}
+
+demo();
+  
+  
