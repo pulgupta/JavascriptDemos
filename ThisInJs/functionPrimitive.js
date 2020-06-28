@@ -24,3 +24,6 @@ person.greetings("Hello")
 
 const greetGlobal = person.greetings;
 greetGlobal("hello")
+
+// Binding the this reference to a method and then calling it in the same line
+greetGlobal.bind(person)("Hello");
